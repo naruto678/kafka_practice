@@ -1,0 +1,18 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "arnab", email = "arnabthakuria678@gmail.com"},
+]
+dependencies = [
+  "kafka-python"
+]
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[tool.pdm]
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
