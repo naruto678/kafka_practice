@@ -1,23 +1,24 @@
 
 from kafka import KafkaConsumer
 from kafka import KafkaAdminClient
+from threading import Thread
+from concurrent.futures import ThreadPoolExecutor
 
-topic = input('Enter the name of the topic that you want to list messages to\n')
 client = KafkaAdminClient(bootstrap_servers=['localhost:9092'])
 
-if topic not in client.list_topics():
-    print(f'${topic} not in ${client.list_topics()}')
-    exit()     
 
-consumer = KafkaConsumer(topic, bootstrap_servers=['localhost:9092'])
+executor = ThreadPoolExecutor(max_workers= 5)
 
-for message in consumer:
-    # message value and key are raw bytes -- decode if necessary!
-    # e.g., for unicode: `message.value.decode('utf-8')`
-    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
+def callback(message):
+    print("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                           message.offset, message.key,
                                           message.value))
 
 
+consumer = KafkaConsumer('Topic1', bootstrap_servers=['localhost:9092'])
+
+for message in consumer:
+    future = executor.submit(callback, message)
+    print(future.result()) 
 
 
