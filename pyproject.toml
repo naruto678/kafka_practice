@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "kafka-poc-3-7"
+version = "0.1.0"
+description = "test"
+authors = ["naruto678 <arnabthakuria678@gmail.com>"]
+readme = "README.md"
+packages = [{include = "kafka_poc_3"}]
+
+[tool.poetry.dependencies]
+python = "3.7.15"
+kafka-python = "^2.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

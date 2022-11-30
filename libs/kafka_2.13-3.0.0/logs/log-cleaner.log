@@ -1,0 +1,6 @@
+[2022-12-01 01:28:26,337] INFO Shutting down the log cleaner. (kafka.log.LogCleaner)
+[2022-12-01 01:28:26,338] INFO [kafka-log-cleaner-thread-0]: Shutting down (kafka.log.LogCleaner)
+[2022-12-01 01:28:26,361] INFO [kafka-log-cleaner-thread-0]: Stopped (kafka.log.LogCleaner)
+[2022-12-01 01:28:26,361] INFO [kafka-log-cleaner-thread-0]: Shutdown completed (kafka.log.LogCleaner)
+[2022-12-01 02:30:11,001] INFO Starting the log cleaner (kafka.log.LogCleaner)
+[2022-12-01 02:30:11,129] INFO [kafka-log-cleaner-thread-0]: Starting (kafka.log.LogCleaner)
